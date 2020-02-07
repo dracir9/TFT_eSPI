@@ -15,6 +15,9 @@
 //
 // ##################################################################################
 
+// Display type -  only define if RPi display
+//#define RPI_DRIVER
+
 // Only define one driver, the other ones must be commented out
 #define ILI9341_DRIVER
 //#define ST7735_DRIVER      // Define additional parameters below for this display
@@ -29,6 +32,7 @@
 //#define ST7789_2_DRIVER    // Minimal configuration option, define additional parameters below for this display
 //#define R61581_DRIVER
 //#define RM68140_DRIVER
+//#define ST7796_DRIVER
 
 // Some displays support SPI reads via the MISO pin, other displays have a single
 // bi-directional SDA pin and the library will try to read this via the MOSI line.
@@ -249,14 +253,13 @@
 // With an ILI9341 display 40MHz works OK, 80MHz sometimes fails
 // With a ST7735 display more than 27MHz may not work (spurious pixels and lines)
 // With an ILI9163 display 27 MHz works OK.
-// The RPi typically only works at 20MHz maximum.
 
 // #define SPI_FREQUENCY   1000000
 // #define SPI_FREQUENCY   5000000
 // #define SPI_FREQUENCY  10000000
 // #define SPI_FREQUENCY  20000000
 #define SPI_FREQUENCY  27000000 // Actually sets it to 26.67MHz = 80/3
-// #define SPI_FREQUENCY  40000000 // Maximum to use SPIFFS
+// #define SPI_FREQUENCY  40000000
 // #define SPI_FREQUENCY  80000000
 
 // Optional reduced SPI frequency for reading TFT
